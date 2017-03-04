@@ -8,9 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-/**
- * Unit test for simple App.
- */
+
 public class AppTest 
     extends TestCase
 {
@@ -21,7 +19,7 @@ public class AppTest
 	@Test
 	public void testEmail()
 	{	
-		int expected = 2;
+		int expected = 4;
 		
 		assertEquals(expected,test.passedRules("info@example.com"));
 	}

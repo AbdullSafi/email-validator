@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class App
 {
   
-    String email = "^[A-Z0-9._-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$";
+    String email = "^[A-Z._]+@gmail\\.com$$";
 
     Pattern validEmail = Pattern.compile( email ,Pattern.CASE_INSENSITIVE);  
     Matcher match;
@@ -51,6 +51,20 @@ public int passedRules(String someString)
      
      if (count == 1)
     	 passedRules++;
+     
+   
+     
+     //rule3 domain name is restricted to gmail.com
+     p = Pattern.compile("@gmail\\.com", Pattern.CASE_INSENSITIVE);
+     matchAt = p.matcher(someString);
+     if(matchAt.find())
+    	  passedRules++;
+     
+     //rule 4 no digits in name 
+     p = Pattern.compile("\\D@", Pattern.CASE_INSENSITIVE);
+     matchAt = p.matcher(someString);
+      if(matchAt.find())
+         passedRules++;
      
      return passedRules;
   
